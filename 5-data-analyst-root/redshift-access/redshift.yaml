@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Redshift Cluster for Lake Formation Spectrum Lab
+
+Parameters:
+  MasterUserPassword:
+    Type: String
+  ClusterNodeType:
+    Description: Cluster Node Type
+    Type: String
+    Default: ra3.xlplus
+    AllowedValues:
+      - dc1.large
+      - dc1.8xlarge
+      - ra3.xlplus
+      - ra3.4xlarge
+      - ra3.16xlarge
+  ClusterSubnet:
+    Description: Public Subnet to be used for the cluster, please choose both
+      LF-Workshop-PublicSubnetOne and LF-Workshop-PublicSubnetTwo
+    Type: List<AWS::EC2::Subnet::Id>
+    AllowedPattern: .+
+  ClusterVPC:
+    Description: VPC to be used for the cluster, please choose LF-Workshop-VPC
+    Type: AWS::EC2::VPC::Id
+  ClusterVPCDefaultSecurityGroup:
+    Description: Security Group to be used for the cluster, please choose default
+      security group of LF-Workshop-VPC
+    Type: List<AWS::EC2::SecurityGroup::Id>
+
+Resources:
+  lfworkshopcluster:
+    Type: AWS::Redshift::Cluster
+    Properties:
+      DBName: dev
+      MasterUsername: awsuser
+      MasterUserPassword: !Ref MasterUserPassword
+      NodeType: !Ref ClusterNodeType
+      ClusterType: single-node
+      ClusterSubnetGroupName: !Ref RedshiftClusterSubnetGroup
+      PubliclyAccessible: 'true'
+      VpcSecurityGroupIds: !Ref ClusterVPCDefaultSecurityGroup
+  RedshiftClusterSubnetGroup:
+    Type: AWS::Redshift::ClusterSubnetGroup
+    Properties:
+      Description: Redshift Cluster Subnet Group
+      SubnetIds: !Ref ClusterSubnet
