@@ -1,0 +1,246 @@
+[
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-access/1-grantpermissions/",
+	"title": "Cấp quyền thông qua AWS Lake Formation",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, bạn sẽ sử dụng Lake Formation để cấp quyền cho người dùng lf-data-engineer và vai trò dịch vụ glue tương ứng DE-GlueServiceRole. DE-GlueServiceRole là vai trò mà người dùng Data Engineer sử dụng để truy cập các bảng Glue Data Catalog trong các tác vụ Glue Studio. Đăng nhập vào bảng điều khiển AWS với tư cách là người dùng lf-data-admin\nTrong giao diện AWS Lake Formation\nChọn Data lake permissions Chọn Grant Trong giao diện Grant permissions\nChọn IAM users and roles Chọn lf-data-engineer và DE-GlueServiceRole Chọn Named data catalog resources Chọn cơ sở dữ liệu tpc Chọn bảng dl_tpc_household_demographics Chọn Select và Describe Chọn All data access Chọn Grant Cấp quyền create table cho role DE-GlueServiceRole trong cơ sở dữ liệu tpc\nTrong giao diện AWS Lake Formation\nChọn Data lake permissions Chọn Grant Trong giao diện Grant permissions\nChọn IAM users and roles Chọn DE-GlueServiceRole Chọn Named data catalog resources Chọn cơ sở dữ liệu tpc Chọn Create table Chọn Grant "
+},
+{
+	"uri": "//localhost:1313/vi/1-introduction/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Giới thiệu cho bạn những điều cơ bản về AWS Lake Formation, đặt nền tảng cho phần thực hành của hội thảo. Bạn có thể sử dụng Lake Formation để quản lý quyền truy cập cấp cơ sở dữ liệu, bảng và cột trên dữ liệu được lưu trữ trong Amazon S3. Sau khi dữ liệu của bạn được đăng ký với Lake Formation, bạn có thể sử dụng các dịch vụ phân tích AWS như AWS Glue, Amazon Athena, Amazon Redshift Spectrum để truy vấn dữ liệu. Các dịch vụ AWS sau đây tích hợp với AWS Lake Formation và tôn trọng quyền của Lake Formation.\nAWS Lake Formation Giúp quản lý tập trung, bảo mật và chia sẻ dữ liệu toàn cầu dễ dàng hơn cho phân tích và học máy (ML). Với Lake Formation, bạn có thể tập trung bảo mật và quản lý dữ liệu bằng AWS Glue Data Catalog, cho phép bạn quản lý siêu dữ liệu và quyền dữ liệu ở một nơi với các tính năng theo kiểu cơ sở dữ liệu quen thuộc. Nó cũng cung cấp khả năng kiểm soát quyền truy cập dữ liệu chi tiết, do đó bạn có thể giúp đảm bảo người dùng có quyền truy cập vào đúng dữ liệu, xuống đến cấp hàng, cột và ô. Sau đó, bạn có thể mở rộng quyền trên nhiều người dùng của mình. Lake Formation cũng giúp chia sẻ dữ liệu dễ dàng hơn trong nội bộ tổ chức của bạn và bên ngoài bằng AWS Data Exchange, cho phép bạn tạo lưới dữ liệu hoặc đáp ứng các nhu cầu chia sẻ dữ liệu khác mà không cần di chuyển dữ liệu. Và, vì Lake Formation theo dõi các tương tác dữ liệu theo vai trò và người dùng, nó cung cấp khả năng kiểm tra quyền truy cập dữ liệu toàn diện để giúp đảm bảo đúng dữ liệu được đúng người dùng truy cập vào đúng thời điểm.\nAWS Glue AWS Glue và Lake Formation chia sẻ cùng một Data Catalog. Đối với các hoạt động của bảng điều khiển (chẳng hạn như xem danh sách các bảng) và tất cả các hoạt động của API, người dùng AWS Glue chỉ có thể truy cập vào các cơ sở dữ liệu và bảng mà họ có quyền Lake Formation.\nAmazon Athena Sử dụng Lake Formation để cho phép hoặc từ chối quyền đọc dữ liệu trong Amazon S3. Khi Amazon Athena người dùng chọn danh mục AWS Glue trong trình soạn thảo truy vấn, họ chỉ có thể truy vấn các cơ sở dữ liệu, bảng và cột mà họ có quyền Lake Formation. Các truy vấn sử dụng manifest không được hỗ trợ. Ngoài các principal xác thực với Athena thông qua AWS Identity and Access Management (IAM), Lake Formation hỗ trợ người dùng Athena kết nối thông qua trình điều khiển JDBC hoặc ODBC và xác thực thông qua SAML. Các nhà cung cấp SAML được hỗ trợ bao gồm Okta và Microsoft Active Directory Federation Service (AD FS). Xem Sử dụng AWS Lake Formation với Amazon Athena.\nAmazon Redshift Spectrum Khi người dùng tạo một lược đồ bên ngoài trên cơ sở dữ liệu trong AWS Glue Data Catalog, họ chỉ có thể truy vấn các bảng và cột trong lược đồ mà họ có quyền Lake Formation. Xem Sử dụng AWS Lake Formation với Amazon Redshift Spectrum\nHồ dữ liệu Hồ dữ liệu là dữ liệu liên tục của bạn được lưu trữ trong Amazon S3 và được Lake Formation quản lý bằng Data Catalog. Hồ dữ liệu thường lưu trữ những thông tin sau:\nDữ liệu có cấu trúc và không có cấu trúc Dữ liệu thô và dữ liệu đã chuyển đổi, để đường dẫn Amazon S3 nằm trong hồ dữ liệu, đường dẫn đó phải được đăng ký với Lake Formation. Danh mục dữ liệu Data Catalog là kho lưu trữ siêu dữ liệu cố định của bạn. Đây là dịch vụ được quản lý cho phép bạn lưu trữ, chú thích và chia sẻ siêu dữ liệu trong AWS Cloud theo cùng cách bạn sẽ làm trong siêu dữ liệu Apache Hive. Dịch vụ này cung cấp kho lưu trữ thống nhất, nơi các hệ thống khác nhau có thể lưu trữ và tìm siêu dữ liệu để theo dõi dữ liệu trong các kho dữ liệu, sau đó sử dụng siêu dữ liệu đó để truy vấn và chuyển đổi dữ liệu. Lake Formation sử dụng AWS Glue Data Catalog để lưu trữ siêu dữ liệu về các kho dữ liệu, nguồn dữ liệu, chuyển đổi và mục tiêu. Siêu dữ liệu về nguồn dữ liệu và mục tiêu ở dạng cơ sở dữ liệu và bảng. Bảng lưu trữ thông tin lược đồ, thông tin vị trí, v.v. Cơ sở dữ liệu là tập hợp các bảng. Lake Formation cung cấp hệ thống phân cấp quyền để kiểm soát quyền truy cập vào cơ sở dữ liệu và bảng trong Data Catalog. Mỗi tài khoản AWS có một Data Catalog cho mỗi Vùng AWS.\n"
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/",
+	"title": "Phát triển Glue Job trong Notebook",
+	"tags": [],
+	"description": "",
+	"content": "Đăng nhập vào bảng điều khiển AWS với tư cách là người dùng lf-data-engineer Tải xuống tệp Notebook\nTrong giao diện AWS Glue Chọn Notebooks Chọn Notebook Trong giao diện Notebook Chọn Upload Notebook Chọn Choose file Chọn DE-GlueServiceRole Chọn Create notebook Bây giờ bạn sẽ được chuyển hướng đến Glue Studio Notebook của mình (có thể mất vài phút để khởi tạo). Đổi tên job thành lf-gluenotebook-job và chọn Save "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/1-datalake-administrator/",
+	"title": "Quản trị viên Data Lake",
+	"tags": [],
+	"description": "",
+	"content": "Quản trị viên Data Lake Quản trị viên Data lake là người dùng IAM hoặc vai trò IAM có khả năng cấp cho bất kỳ người đứng đầu nào (bao gồm cả bản thân) bất kỳ quyền nào trên bất kỳ tài nguyên Data Catalog nào.\nTruy cập AWS Management Console Tìm AWS Lake Formation Chọn AWS Lake Formation Trong giao diện AWS Lake Formation Chỉ định một quản trị viên Lake Formation, bỏ chọn Add myself Chọn Add other AWS users or roles và chọn lf-data-admin Chọn Get started Trong giao diện AWS Lake Formation Chọn Administrative roles and tasks Chọn Manage administrators Trong giao diện Add administrators Chọn Data lake administrator Chọn lf-data-admin "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/athena-access/1-createdatafilters/",
+	"title": "Tạo bộ lọc hàng và ô bằng bộ lọc dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Đăng nhập với tư cách là người dùng lf-data-admin\nTạo bộ lọc hàng bằng bộ lọc dữ liệu Trong giao diện AWS Lake Formation: Chọn Data filters Chọn Create new filter Trong giao diện Create data filter Data filter name, nhập analyst_item Target database, chọn tpc Target table, chọn dl_tpc_item Chọn Access to all columns Chọn Filter rows Nhập i_category='Electronics' Chọn Create data filter Tạo bộ lọc ô bằng bộ lọc dữ liệu Tiếp theo, chúng ta sẽ tạo một bộ lọc dữ liệu khác để truy cập cấp độ ô trên bảng dl_tpc_promotion và cấp quyền truy cập cho người dùng lf-data-analyst.\nTrong giao diện AWS Lake Formation:\nChọn Data filters Chọn Create new filter Trong giao diện Create data filter\nData filter name, nhập analyst_promotion Target database, chọn tpc Target table, chọn dl_tpc_promotion Chọn Include columns Chọn các cột p_start_date_sk, p_end_date_sk, p_discount_active, p_channel_details, p_purpose, p_promo_id, p_promo_name Chọn Filter rows Nhập p_promo_name='ese' Chọn Create data filter Tạo bộ lọc cột Trong giao diện AWS Lake Formation:\nChọn Data permissions Chọn Grant Trong giao diện Grant permissions:\nChọn IAM users and roles Chọn lf-data-analyst Chọn Named data catalog resources Chọn tpc Chọn dl_tpc_web_page Chọn Column-based access Chọn Include columns Chọn wp_url, wp_type, wp_link_count Chọn Grant "
+},
+{
+	"uri": "//localhost:1313/vi/7-bi-analyst-root/initial-setup/",
+	"title": "Thiết lập ban đầu",
+	"tags": [],
+	"description": "",
+	"content": " Trong bảng điều khiển dịch vụ AWS, hãy tìm kiếm QuickSight. Nhấp vào SIGN UP FOR QUICKSIGHT. Trên trang Tạo tài khoản QuickSight Nhập địa chỉ email của bạn Chọn Use IAM federated identities \u0026amp; QuickSight-managed users Đặt QuickSight account name là quicksight-lf-yourname Chọn Amazon Athena và Amazon S3. Đối với S3, hãy chọn bucket có tên lf-data-lake- Chọn Finish Sau khi đăng ký thành công, chọn GO TO QUICKSIGHT Tiếp theo, chúng ta sẽ thiết lập một tác giả QuickSight để chứng minh tích hợp Lake Formation. Chúng ta sẽ cấu hình tác giả này để có quyền truy cập vào các cột được chọn trong bảng dl_tpc_customer. Các cột mà họ có thể truy cập là c_salutation,c_first_sales_date_sk, c_customer_sk, c_login.\nNhấp vào người dùng đã đăng nhập ở góc trên bên trái và chọn Manage QuickSight và chọn Manage users. Thêm người dùng bằng cách nhấp vào Invite users. Nhập địa chỉ email của bạn với vai trò tác giả và chọn No cho IAM. Nhấp vào Invite. Bạn sẽ nhận được email để chấp nhận lời mời, thiết lập mật khẩu và liên kết đăng nhập. Vào hộp thư đến của bạn và chấp nhận lời mời. Đặt mật khẩu mới. Email này cũng có liên kết đăng nhập. Nhấp vào đây để đăng nhập mà bạn sẽ cần trong các bước tiếp theo. Sao chép liên kết và lưu lại.\nBạn sẽ cần QuickSight ARN cho tác giả vừa tạo, vì người dùng được tạo trong không gian tên mặc định, bạn có thể chèn thông tin chi tiết (ID tài khoản AWS và Email) bên dưới để lấy ARN QuickSight cho người dùng\narn:aws:quicksight:us-east-1:\u0026lt;aws-account-id\u0026gt;:user/default/\u0026lt;email-address\u0026gt;\r"
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/redshift-access/1-setupredshift/",
+	"title": "Thiết lập Redshift Spectrum",
+	"tags": [],
+	"description": "",
+	"content": "Tạo cụm Redshift Cung cấp các giá trị sau:\nStack name : LF-Workshop-Redshift-Spectrum ClusterSubnet : Chọn LF-Workshop-PublicSubnetOne và LF-Workshop-PublicSubnetTwo ClusterVPC : Chọn LF-Workshop-VPC ClusterVPCDefaultSecurityGroup : Chọn security group mặc định của LF-Workshop-VPC MasterUserPassword : Mật khẩu cho người dùng Redshift Admin (Phải dài từ 8-64 ký tự và phải chứa ít nhất một chữ cái viết hoa, một chữ cái viết thường và một số. Có thể là bất kỳ ký tự ASCII nào có thể in được ngoại trừ “/”, ““” hoặc “@”) Kiểm tra bảng điều khiển CloudFormation và đợi trạng thái CREATE_COMPLETE.\nTạo lược đồ bên ngoài Spectrum Trong giao diện Amazon Redshift, chọn Provisioned cluster dashboard Chọn Query editor v2 Cung cấp đường dẫn Amazon S3 Chọn cụm trên điều hướng bên trái Chọn Database user name and password Database, nhập dev User name, nhập awsuser Password, hãy sử dụng mật khẩu mà bạn đã tạo cho MasterUserPassword Chọn Create connection Sau khi kết nối, hãy chạy các câu lệnh bên dưới thay thế FILL_ACCOUNT_ID bằng ID tài khoản của bạn để tạo bảng spectrum và cấp quyền cho người dùng lf-data-analyst. create external schema lf_spectrum_schema from data catalog\rdatabase \u0026#39;tpc\u0026#39; iam_role \u0026#39;SESSION\u0026#39;\rcatalog_id \u0026#39;FILL_ACCOUNT_ID\u0026#39;;\rCREATE USER \u0026#34;IAM:lf-data-analyst\u0026#34; password disable;\rGRANT ALL ON SCHEMA lf_spectrum_schema to \u0026#34;IAM:lf-data-analyst\u0026#34;; "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/athena-access/",
+	"title": "Truy cập Athena",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Athena là một dịch vụ truy vấn tương tác giúp dễ dàng phân tích dữ liệu trực tiếp trong Amazon Simple Storage Service (Amazon S3) bằng cách sử dụng SQL chuẩn . Chỉ cần thực hiện một vài thao tác trong AWS Management Console, bạn có thể trỏ Athena tới dữ liệu được lưu trữ trong Amazon S3 và bắt đầu sử dụng SQL chuẩn để chạy các truy vấn tùy ý và nhận kết quả trong vài giây.\nIAM xác định quyền truy cập chi tiết vào datalake bằng cách sử dụng Athena Khi bạn cấp quyền cho Lake Formation trên bảng Data Catalog, bạn có thể bao gồm các thông số kỹ thuật lọc dữ liệu để hạn chế quyền truy cập vào một số dữ liệu nhất định trong kết quả truy vấn. Lake Formation sử dụng tính năng lọc dữ liệu để đạt được bảo mật cấp cột, bảo mật cấp hàng và bảo mật cấp ô.\nBộ lọc hàng trên bảng dl_tpc_item Bộ lọc ô trên bảng dl_tpc_promotion Bộ lọc cột trên bảng dl_tpc_web_page Nội dung Tạo bộ lọc hàng và ô bằng bộ lọc dữ liệu Cấp quyền cho người dùng Xác minh quyền truy cập thông qua bảng điều khiển Athena "
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-access/",
+	"title": "Truy cập Glue Studio",
+	"tags": [],
+	"description": "",
+	"content": "AWS Glue Studio là giao diện trực quan cho AWS Glue giúp các nhà phát triển extract-transform-load (ETL) dễ dàng tạo, chạy và giám sát các tác vụ ETL của AWS Glue. Các kỹ sư dữ liệu sử dụng AWS Glue ETL với Apache Spark để thực hiện chuyển đổi trên các tập dữ liệu của họ trong Amazon S3 và tải dữ liệu đã chuyển đổi vào các hồ dữ liệu và kho dữ liệu để phân tích. Với các nhóm khác nhau truy cập cùng một tập dữ liệu trong Amazon S3, việc cấp và hạn chế quyền dựa trên vai trò của họ là điều bắt buộc.\nNội dung Cấp quyền thông qua AWS LakeFormation Tạo công việc Glue Studio Xác minh quyền truy cập "
+},
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Xây dựng hồ dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Xây dựng hồ dữ liệu Sử dụng AWS Lake Formation để xây dựng, bảo mật và quản lý hồ dữ liệu trên AWS. AWS Lake Formation giúp dễ dàng quản lý tập trung, bảo mật và chia sẻ dữ liệu toàn cầu cho phân tích và học máy (ML).\nNội dung chính Giới thiệu Dữ liệu mẫu \u0026amp; Người dùng Các bước chuẩn bị Cấu hình Lake Formation Data Analyst Data Engineer BI Analyst Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/athena-access/2-grantpermission/",
+	"title": "Cấp quyền cho người dùng",
+	"tags": [],
+	"description": "",
+	"content": "Cấp quyền lọc hàng bằng bộ lọc dữ liệu Trong giao diện AWS Lake Formation:\nChọn Tables Chọn bảng dl_tpc_item Chọn Actions, chọn Grant Trong giao diện Grant permissions:\nChọn IAM users and roles\nChọn lf-data-analyst\nChọn Named data catalog resources\nChọn cơ sở dữ liệu tpc\nChọn bảng dl_tpc_item\nData filters - optional, chọn analyst_item\nChọn Select Chọn Grant Cấp quyền lọc ô bằng bộ lọc dữ liệu Trong giao diện AWS Lake Formation:\nChọn Tables Chọn bảng dl_tpc_promotion Chọn Actions, chọn Grant Trong giao diện Grant permissions:\nChọn IAM users and roles\nChọn lf-data-analyst\nChọn Named data catalog resources\nChọn cơ sở dữ liệu tpc\nChọn bảng dl_tpc_promotion\nData filters - optional, chọn analyst_promotion\nChọn Select Chọn Grant "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/redshift-access/2-grantpermission/",
+	"title": "Cấp quyền cho người dùng và nhóm",
+	"tags": [],
+	"description": "",
+	"content": "Cấp quyền cho người dùng và nhóm thông qua AWS Lake Formation Trong giao diện AWS Lake Formation, chọn Data permissions, chọn Grant\nTrong giao diện Grant permissions\nChọn IAM users and roles, chọn lf-data-analyst Chọn Named data catalog resources, chọn tpc cho cơ sở dữ liệu Đối với Database permissions, chọn Describe Chọn Grant Chọn Grant, trong giao diện Grant permissions:\nChọn IAM users and roles, chọn lf-data-analyst Chọn Resources matched by LF-Tags (recommended), chọn Classification cho Key và Non-Sensitive cho Values Đối với Database permissions, chọn Describe Đối với Table permissions, chọn Select và Describe Chọn Grant Chọn Grant, trong giao diện Grant permissions: Chọn IAM users and roles, chọn lf-data-analyst Chọn Resources matched by LF-Tags (recommended), chọn group cho Key và analyst cho Values Đối với Database permissions, chọn Describe Đối với Table permissions, chọn Select và Describe Chọn Grant "
+},
+{
+	"uri": "//localhost:1313/vi/2-sample-data-users/",
+	"title": "Dữ liệu mẫu &amp; Người dùng",
+	"tags": [],
+	"description": "",
+	"content": "Cơ sở dữ liệu \u0026amp; Bảng TPC Dữ liệu TPC , là một tập dữ liệu công khai được sử dụng trong hội thảo này. Đây là một tập dữ liệu tổng hợp về sản phẩm, thông tin khách hàng, thông tin nhân khẩu học. Chi tiết hộ gia đình, hàng tồn kho, bán hàng trên web, khuyến mại và trả lại.\nSau đây là những thông tin chi tiết cần tập trung vào trong hội thảo này:\nweb_sales web_page promotion item customer customer_address household_demographics income_band Toàn bộ từ điển dữ liệu TPC có sẵn tại đây\nTest Users \u0026amp; Groups Để chứng minh các khả năng khác nhau của Lake Formation, sử dụng các nhân vật người dùng sau được ánh xạ tới các nguyên tắc IAM.\nQuản trị dữ liệu, được ánh xạ tới lf-data-admin – Có quyền truy cập vào tất cả các tính năng của Lake Formation và có thể thực hiện mọi thay đổi đối với dịch vụ. Kỹ sư dữ liệu, được ánh xạ tới lf-data-engineer – Quan tâm đến việc phát triển các công việc Kỹ thuật dữ liệu nhưng chỉ giới hạn ở các bảng web_page và web_sales để kiểm soát quyền truy cập. Nhà phân tích dữ liệu, được ánh xạ tới lf-data-analyst – Quan tâm đến việc truy vấn dữ liệu để tạo bảng thông tin và báo cáo BI, nhưng không thể truy cập dữ liệu PII. "
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/",
+	"title": "Tạo công việc Glue Studio",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, chúng ta sẽ tạo một tác vụ ETL bằng cách sử dụng SQL Transform thông qua Glue Studio. Đăng nhập vào bảng điều khiển AWS với tư cách là người dùng lf-data-engineer\nTrong giao diện AWS Management Console Tìm AWS Glue Chọn AWS Glue Trong giao diện AWS Glue Chọn Visual ETL Chọn Visual ETL Đổi tên job thành: LF_GlueStudio Nhấp vào tab Job details để xem tất cả cấu hình công việc. Chọn DE-GlueServiceRole Đặt Requested number of workers là 5 Nhấp vào tab Visual, trong Sources chọn AWS Glue Data Catalog Chọn Data Source mà bạn vừa tạo Name, nhập Amazon S3 Chọn cơ sở dữ liệu tpc Chọn bảng dl_tpc_household_demographics Giữ Amazon S3 và thêm SQL Query Nhấp vào SQL Query Chọn tab Transform và nhập truy vấn bên dưới trong SQL query select * from myDataSource\rwhere hd_buy_potential = \u0026#39;0-500\u0026#39; Chọn tab Output schema Giữ SQL Query và thêm Amazon S3 Nhấp vào Data target - S3 bucket Chọn Parquet Chọn Snappy Cung cấp đường dẫn s3://\u0026lt;your_LFDataLakeBucketName\u0026gt;/gluestudio/curated/. Vui lòng đảm bảo thay thế \u0026lt;your_LFDataLakeBucketName\u0026gt; bằng thùng S3 LFDataLakeBucketName của bạn từ tab Outputs của mẫu Cloud Formation. Chọn Create a table in the Data Catalog and on subsequent runs, update the schema and add new partitions Chọn cơ sở dữ liệu tpc Đặt tên bảng cho tệp đầu ra được quản lý. Trong trường hợp của tôi, tôi đặt tên là dl_tpc_household_demographics_below500 Chọn Save "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/2-catalog-settings/",
+	"title": "Thay đổi cài đặt Catalog",
+	"tags": [],
+	"description": "",
+	"content": "Thay đổi cài đặt Catalog Trong giao diện AWS Lake Formation Chọn Data Catalog Settings Chọn Version 3 Chọn Save "
+},
+{
+	"uri": "//localhost:1313/vi/7-bi-analyst-root/qs-lakeformation-setup/",
+	"title": "Thiết lập quyền truy cập người dùng Quicksight trong Lake Formation",
+	"tags": [],
+	"description": "",
+	"content": " Trong bảng điều khiển dịch vụ AWS, hãy tìm kiếm Lake Formation. Đi đến cơ sở dữ liệu và nhấp vào Grant. Chọn SAML user and groups và nhập QuickSight ARN của tác giả Chọn tpc làm Cơ sở dữ liệu và dl_tpc_customer làm Bảng Chọn Select, chọn Column-based access Chọn c_salutation, c_first_sales_date_sk, c_customer_sk, c_login Chọn Grant "
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-notebook-access/",
+	"title": "Truy cập Glue Studio Notebook",
+	"tags": [],
+	"description": "",
+	"content": "AWS Glue giúp bạn dễ dàng tạo các tác vụ ETL bằng Glue interactive notebook trong AWS Glue Studio.\nNội dung Phát triển Glue Job trong Notebook Xác minh quyền truy cập "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/redshift-access/",
+	"title": "Truy cập Redshift",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Redshift là dịch vụ kho dữ liệu được quản lý hoàn toàn, quy mô petabyte trên đám mây. Amazon Redshift Serverless cho phép bạn truy cập và phân tích dữ liệu mà không cần cấu hình thông thường của kho dữ liệu được cung cấp. Tài nguyên được cung cấp tự động và dung lượng kho dữ liệu được mở rộng thông minh để mang lại hiệu suất nhanh ngay cả đối với khối lượng công việc đòi hỏi khắt khe và khó lường nhất. Bạn không phải trả phí khi kho dữ liệu không hoạt động, do đó bạn chỉ phải trả tiền cho những gì bạn sử dụng. Bất kể kích thước của tập dữ liệu là bao nhiêu, bạn có thể tải dữ liệu và bắt đầu truy vấn ngay trong trình chỉnh sửa truy vấn Amazon Redshift v2 hoặc trong công cụ trí tuệ kinh doanh (BI) yêu thích của bạn.\nTruy cập danh tính IAM liên kết vào datalake bằng Redshift Spectrum Amazon Redshift Spectrum cho phép bạn truy vấn và truy xuất dữ liệu trong các hồ dữ liệu Amazon S3 mà không cần tải dữ liệu vào các nút cụm Amazon Redshift. Redshift Spectrum hỗ trợ truy vấn các bảng Lake Formation bằng cách sử dụng danh tính IAM liên kết. Danh tính IAM có thể là người dùng IAM hoặc vai trò IAM. Redshift Spectrum hỗ trợ đọc hoặc truy vấn SELECT trên các bảng lược đồ bên ngoài được Lake Formation quản lý.\nNội dung Thiết lập Redshift Spectrum Cấp quyền cho người dùng Xác minh quyền truy cập thông qua Redshift "
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/",
+	"title": "Xác minh quyền truy cập",
+	"tags": [],
+	"description": "",
+	"content": "Xác minh quyền truy cập vào các bảng được cấp quyền trong Lake Formation Thực hiện ô tiếp theo để thiết lập và bắt đầu phiên tương tác Glue của bạn, phiên này cần thiết để bắt đầu sử dụng sổ ghi chép. Đợi cho đến khi bạn thấy thông báo Session [SOME_SESSION_ID] has been created. Thực hiện ô tiếp theo để tạo DynamicFrame từ bảng dl_tpc_household_demographics được cấp quyền truy cập thông qua DE-GlueServiceRole và hiển thị lược đồ của bảng đó. Thực hiện ô tiếp theo để chuyển đổi DynamicFrame thành Spark DataFrame và hiển thị mẫu dữ liệu cho các hàng bảng có giá trị cột hd_buy_potential lớn hơn 10000. Thực hiện ô tiếp theo để ghi dữ liệu đầu ra vào đường dẫn Amazon S3 s3://\u0026lt;your_bucket\u0026gt;/gluenotebook/curated/ và một bảng cho dữ liệu đó trong AWS Glue Data Catalog. Hãy đảm bảo thay thế ${BUCKET_NAME} bằng thùng S3 LFWorkshopBucketName của bạn từ tab Outputs của mẫu Cloud Formation.\nSau khi ô trước đó hoàn tất thực thi, bạn có thể xác minh quyền truy cập bằng cách vào đường dẫn S3 s3://\u0026lt;your_bucket\u0026gt;/gluenotebook/curated/ để xem các tệp đầu ra được tạo ở định dạng Parquet. Xác minh từ chối quyền truy cập vào các bảng không được cấp quyền trong Lake Formation Bây giờ để xác minh quyền truy cập bị từ chối trên các bảng không được cấp quyền trong Lake Formation, hãy thực thi ô cuối cùng trong sổ ghi chép đang truy cập vào một trong các bảng khác trong cơ sở dữ liệu tpc không được cấp quyền cho vai trò DE-GlueServiceRole - dl_tpc_customer_address.\nThông báo lỗi hiển thị quyền Lake Formation không đủ cho bảng đã cho.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-preparation/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Tạo cặp khóa EC2 Mẫu CloudFormation sẽ yêu cầu bạn cung cấp cặp khóa Amazon EC2.\nMở bảng điều khiển Amazon EC2 tại https://console.aws.amazon.com/ec2/ Trong ngăn điều hướng, bên dưới NETWORK \u0026amp; SECURITY , chọn Key Pairs. Chọn Create Key Pair. Đối với Key pair name, hãy nhập tên cho cặp khóa mới. Chọn tùy chọn .pem rồi chọn Create. Tệp khóa riêng tư được trình duyệt của bạn tự động tải xuống. Tên tệp cơ sở là tên bạn đã chỉ định làm tên cặp khóa của mình và phần mở rộng tên tệp là .pem. Lưu tệp khóa riêng tư, tệp này sẽ được yêu cầu trong chương tiếp theo. CloudFormation Template Trước khi bắt đầu, bạn cần tạo các tài nguyên AWS cần thiết. Để thực hiện việc này, chúng tôi cung cấp mẫu AWS CloudFormation để tạo một ngăn xếp chứa các tài nguyên. Khi bạn tạo ngăn xếp, AWS sẽ tạo một số tài nguyên trong tài khoản của bạn. Kết quả của các bước này là tạo cơ sở dữ liệu TPC mẫu chạy trên Amazon RDS, người dùng mẫu để kiểm tra các mẫu bảo mật khác nhau, kết nối Glue và các tài nguyên IAM khác.\nTải file template\nTrong giao diện CloudFormation, chọn Create stack\nChọn Choose file, chọn tệp template đã tải xuống và chọn Next Stack name, nhập Lake-Formation-Workshop\nChọn key pair đã tạo\nChấp nhận các giá trị mặc định và chọn Next\nChọn Submit\nNhận được mật khẩu bí mật Mật khẩu được sử dụng cho tất cả người dùng trong hội thảo này được tạo thông qua AWS Secrets Manager. Mật khẩu này là duy nhất mỗi lần ngăn xếp này được tạo. Thực hiện theo các bước sau để lấy mật khẩu bí mật cho tất cả người dùng.\nNhấp vào siêu liên kết LFUsersCredentials từ tab đầu ra CloudFormation. Lấy lại mật khẩu bằng cách nhấp vào Retrieve secret value và lưu lại để sử dụng sau này. "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/3-databases/",
+	"title": "Cơ sở dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "\rHãy đảm bảo bạn đăng xuất khỏi bảng điều khiển AWS và đăng nhập với tư cách lf-data-admin để tiếp tục.\nĐăng xuất khỏi bảng điều khiển AWS hiện tại và sử dụng liên kết đăng nhập từ đầu ra CloudFormation để đăng nhập với tư cách là người dùng lf-data-admin và sử dụng mật khẩu bạn lấy được từ AWS Secrets Manager. Bây giờ, hãy điều hướng đến bảng điều khiển AWS Lake Formation và nhấp vào tùy chọn Databases ở bên trái, sau đó nhấp vào nút Create database.\nVì chúng ta đang có kế hoạch xây dựng hồ dữ liệu cho dữ liệu TPC, hãy đặt tên cơ sở dữ liệu là tpc . Trên hộp Location , chọn đường dẫn S3 data lake được tạo thông qua CloudFormation. Bạn cũng có thể tìm đường dẫn S3 từ tab đầu ra CloudFormation. Đường dẫn S3 sẽ được đặt tên là lf-data-lake-account-ID trong đó ID tài khoản sẽ là số tài khoản 12 chữ số mà bạn đang làm việc. Bỏ chọn tùy chọn - Use only IAM access control for new tables in this database. Giữ nguyên các tùy chọn còn lại theo mặc định và nhấp vào nút Create database.\nNếu việc tạo cơ sở dữ liệu thành công, nó sẽ trông như thế này:\n"
+},
+{
+	"uri": "//localhost:1313/vi/7-bi-analyst-root/qs-verify-access-control/",
+	"title": "Xác minh quyền kiểm soát truy cập trong QuickSight",
+	"tags": [],
+	"description": "",
+	"content": " Vào hộp thư đến của bạn và nhấp vào Click here to sign in trong email mời hoặc sử dụng liên kết nếu bạn đã lưu trước đó. Nhập tên người dùng (địa chỉ email của bạn) và nhập mật khẩu. Chọn Datasets và nhấp vào New dataset. Chọn Athena từ tùy chọn nguồn dữ liệu và nhập tên nguồn dữ liệu ví dụ lf-athena-source. Nhấp vào Create data source. Chọn bảng dl_tpc_customer và chọn Edit/Preview data Bạn sẽ chỉ thấy 4 cột c_salutation,c_first_sales_date_sk,c_customer_sk,c_login trong bảng. Điều này dựa trên quyền kiểm soát truy cập cấp độ cột mà chúng tôi đã thiết lập trước đó trong bảng điều khiển Lake Formation cho tác giả QuickSight này. Tùy chọn - Nhấp vào PUBLISH \u0026amp; VISUALIZE ở góc trên bên trái để tạo mẫu báo cáo QS dựa trên báo cáo này. "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/athena-access/3-verifyaccess/",
+	"title": "Xác minh quyền truy cập",
+	"tags": [],
+	"description": "",
+	"content": "Xác minh quyền truy cập thông qua bảng điều khiển Athena Trong giao diện AWS Management console\nTìm Athena Chọn Athena Trong giao diện Athena\nChọn Query your data with Trino SQL Chọn Launch query editor Nếu bạn là người dùng lần đầu, bạn sẽ thấy thông báo thiết lập vị trí kết quả truy vấn trong S3. Chọn Edit settings Trong giao diện Manage settings, nhập S3 bucket có tên s3://lf-workshop-AccountID/athena-results/, thay thế bằng AWS AccountID của bạn và chọn Save Nhấp vào tab Editor để quay lại Athena Query Editor. Xác minh bộ lọc hàng Thực hiện câu truy vấn bên dưới để xem dữ liệu bảng dl_tpc_item, chỉ những hàng có giá trị trường i_category là Electronics mới hiển thị với người dùng lf-data-analyst. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_item\u0026#34; limit 10; Thực hiện truy vấn bên dưới để xác nhận thêm quyền kiểm soát truy cập cấp hàng trên bảng dl_tpc_item. Do tiêu chí của bộ lọc dữ liệu analyst_item, lf-data-analyst không có quyền truy cập vào các hàng mà trường i_category không phải là Electronics. Do đó, sẽ không có hàng nào được trả về. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_item\u0026#34; WHERE i_category != \u0026#39;Electronics\u0026#39;; Xác minh bộ lọc ô Bên cạnh kiểm tra quyền trên bảng dl_tpc_promotion, hãy mở rộng bảng này ở phía bên trái màn hình. Lưu ý cách bảng chỉ hiển thị các cột chọn lọc được xác định trong bộ lọc dữ liệu analyst_promotion. Thực hiện câu truy vấn bên dưới để xem dữ liệu bảng dl_tpc_promotion. Chỉ những ô được xác định trong bộ lọc dữ liệu (các cột và hàng được chọn có giá trị trường p_promo_name là ese) mới hiển thị cho người dùng lf-data-analyst. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_promotion\u0026#34; limit 10; Thực hiện truy vấn bên dưới để xác nhận thêm quyền kiểm soát truy cập cấp độ ô trên bảng dl_tpc_promotion. Do tiêu chí của bộ lọc dữ liệu analyst_promotion, lf-data-analyst không có quyền truy cập vào các hàng mà p_promo_name không phải là ese. Do đó, sẽ không có hàng nào được trả về. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_promotion\u0026#34; WHERE p_promo_name != \u0026#39;ese\u0026#39;; Xác minh bộ lọc cột Thực hiện truy vấn bên dưới để xác nhận thêm quyền kiểm soát truy cập cấp độ cột trên bảng dl_tpc_web_page, bảng chỉ hiển thị các cột đã chọn. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_web_page\u0026#34; limit 10; "
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/glue-studio-access/3-verifyaccess/",
+	"title": "Xác minh quyền truy cập",
+	"tags": [],
+	"description": "",
+	"content": "Đăng nhập với tư cách là lf-data-engineer\nXác minh quyền truy cập vào các bảng được cấp quyền trong Lake Formation Sau khi hoàn tất việc tạo tác vụ LF_GlueStudio ở phần trước, hãy nhấp vào nút Run ở góc trên bên phải để bắt đầu thực hiện tác vụ LF_GlueStudio\nSau khi Job run Succeeded, bạn có thể xác minh quyền truy cập bằng cách vào thư mục được quản lý của S3 bucket để xem các tệp đầu ra được tạo ở định dạng Parquet. Ngoài ra, bạn có thể duyệt đến Glue Catalog và chọn cơ sở dữ liệu cụ thể của mình để xem bảng mới được tạo bên dưới.\n"
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/redshift-access/3-verifyaccess/",
+	"title": "Xác minh quyền truy cập thông qua Redshift",
+	"tags": [],
+	"description": "",
+	"content": "Đăng nhập vào bảng điều khiển AWS với tư cách là lf-data-analyst\nTrong giao diện Amazon Redshift, chọn Provisioned cluster dashboard Chọn Query editor v2 Chọn cụm và chọn Temporary credentials with your IAM identity Chọn Create connection Hãy chạy các câu lệnh bên dưới để xác minh quyền truy cập vào các bảng. SELECT * FROM lf_spectrum_schema.dl_tpc_customer; SELECT * FROM lf_spectrum_schema.dl_tpc_household_demographics; "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/",
+	"title": "Cấu hình Lake Formation",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, Quản trị viên Data Lake sẽ thiết lập Lake Formation để các cá nhân dữ liệu người tiêu dùng khác như Kỹ sư dữ liệu, Nhà khoa học dữ liệu và Nhà phân tích dữ liệu có thể sử dụng. Quản trị viên dữ liệu sẽ tạo cơ sở dữ liệu mới cho dữ liệu TPC, tạo bảng siêu dữ liệu cho dữ liệu đó trong danh mục dữ liệu Glue và thiết lập quyền truy cập cho người dùng sử dụng thẻ Lake Formation.\nThực hiện theo từng bước sau để hoàn thành các bài lab này:\nQuản trị viên Data Lake Thay đổi cài đặt Catalog Cơ sở dữ liệu Cung cấp dữ liệu cho hồ dữ liệu Vị trí Data Lake Thẻ Lake Formation(LF-Tags) "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/4-crawlthedata/",
+	"title": "Cung cấp dữ liệu cho hồ dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Trong bài tập này, chúng ta sẽ chạy AWS Glue Crawler hiện có (Được tạo như một phần của ngăn xếp CloudFormaton) và điền danh mục vào cơ sở dữ liệu tpc mà bạn đã tạo ở các bước trước.\nTrước khi chạy AWS Glue Crawler, trước tiên chúng ta cần cấp quyền cho vai trò AWS Glue Crawler để tạo bảng trong cơ sở dữ liệu tpc . Chúng tôi đã chọn vai trò IAM LF-GlueServiceRole khi tạo AWS Glue Crawler. Vai trò này sẽ tạo các bảng trong cơ sở dữ liệu tpc đã tạo ở bước trước. Theo mặc định, vai trò này không có quyền tạo tài nguyên trong cơ sở dữ liệu tpc . Thực hiện theo các bước sau để cung cấp quyền truy cập cần thiết cho vai trò IAM LF-GlueServiceRole .\nTrong ngăn điều hướng AWS Lake Formation, bên dưới Databases , chọn tpc . Chọn Grant từ danh sách thả xuống Actions. Trong giao diện Grant permissions: Chọn IAM users and roles Chọn LF-GlueServiceRole Chọn Named Data Catalog resources Chọn Databases là tpc Chọn Create table Chọn Grant Trong ngăn điều hướng AWS Lake Formation, chọn Crawlers để đến bảng điều khiển AWS Glue Chọn crawler có tên TPC Crawler Nhấp vào nút Run để chạy crawler Bạn sẽ thấy crawler khởi động thành công Sẽ mất khoảng một phút để điền các bảng vào cơ sở dữ liệu tpc . Khi quá trình thu thập dữ liệu hoàn tất, bạn sẽ thấy số lượng bảng được thêm vào trong cột Table changes from last run. Trong trường hợp này, 8 bảng đã được thêm vào. "
+},
+{
+	"uri": "//localhost:1313/vi/5-data-analyst-root/",
+	"title": "Nhà phân tích dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung Truy cập Athena Truy cập Redshift "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/5-datalake-locations/",
+	"title": "Vị trí hồ dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Bạn đăng ký vị trí S3 với AWS Lake Formation. Sau đó, bạn có thể sử dụng quyền Lake Formation để kiểm soát truy cập chi tiết vào các đối tượng AWS Glue Data Catalog trỏ đến vị trí này và dữ liệu cơ bản trong vị trí đó.\nTrong ngăn điều hướng, chọn Data lake locations, sau đó chọn Register location Trong giao diện Register location: Nhập đường dẫn đến thùng S3 hiện có để chứa dữ liệu mà bạn muốn có trong hồ dữ liệu của mình. Đối với IAM role, chọn LF-GlueServiceRole Trong Permission mode, chọn Lake Formation Chọn Register location "
+},
+{
+	"uri": "//localhost:1313/vi/6-data-engineer-root/",
+	"title": "Kỹ sư dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Kỹ sư dữ liệu xây dựng data pipelines để di chuyển dữ liệu từ vị trí này sang vị trí khác, áp dụng các quy trình chuyển đổi dữ liệu để sửa đổi dữ liệu sao cho chính xác và có thể sử dụng được bởi các nhà phân tích dữ liệu và nhà khoa học dữ liệu nhằm đưa ra thông tin kinh doanh.\nNội dung Glue Studio Glue Studio Notebook "
+},
+{
+	"uri": "//localhost:1313/vi/4-configure-lake-formation-root/6-lftag-assignment/",
+	"title": "Thẻ Lake Formation",
+	"tags": [],
+	"description": "",
+	"content": "Tạo LF-Tags Từ ngăn điều hướng, chọn LF-Tags and permissions. Chọn Add LF-Tag Nhập Clasification cho Key Thêm Sensitive và Non-Sensitive cho Values Chọn Add LF-Tag Nhập group cho Key Thêm developer, campaign, analyst cho Values Chỉ định quyền để thay đổi bảng để thêm LF-Tags Trong giao diện AWS Lake Formation, chọn Tables Chọn dl_tpc_customer, nhấp vào Actions và chọn Grant Trong giao diện Grant permissions: Chọn lf-data-admin Trong phần LF-Tags or catalog resources, chọn Named data catalog resources Chọn cơ sở dữ liệu tpc và bảng dl_tpc_customer Chọn Alter Chọn Grant Gán LF-Tags cho các đối tượng danh mục dữ liệu Trong giao diện AWS Lake Formation, chọn Tables Chọn bảng dl_tpc_customer và đi tới trang chi tiết bảng Chọn Actions, chọn Edit LF-Tags Chọn Assign new LF-Tag Cung cấp Classification cho Key và Non-Sensitive cho Values Chọn Save Chọn Actions, chọn Edit schema Chọn c_first_name, c_last_name, c_email_address và chọn Edit LF-tags Đối với Inherited keys, thay đổi giá trị thành Sensitive Chọn Save Chọn Save as new version\nTrong giao diện AWS Lake Formation, chọn Tables\nChọn bảng dl_tpc_household_demographics, Chọn Actions, chọn Edit LF-Tags\nChọn group cho Assigned keys và chọn analyst cho Values\n"
+},
+{
+	"uri": "//localhost:1313/vi/7-bi-analyst-root/",
+	"title": "Nhà phân tích BI",
+	"tags": [],
+	"description": "",
+	"content": "Chuyên gia phân tích BI chịu trách nhiệm xây dựng báo cáo dữ liệu và bảng thông tin cho chủ doanh nghiệp (LoB) để họ có thể đưa ra quyết định kinh doanh.\nTích hợp Quicksight Thiết lập ban đầu Thiết lập quyền truy cập người dùng Quicksight trong Lake Formation Xác minh quyền kiểm soát truy cập trong QuickSight "
+},
+{
+	"uri": "//localhost:1313/vi/8-cleanups/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Hủy đăng ký QuickSight Click vào tên user QuickSight ở menu góc trên bên phải. Click Manage QuickSight. Click Account settings. Click Manage Điền confirm để xác nhận. Click Delete account. Xóa Stacks Vào CloudFormation Chọn Stack \u0026lsquo;Lake-Formation-Workshop\u0026rsquo; Delete Làm tương tự với \u0026lsquo;LF-Workshop-Redshift-Spectrum\u0026rsquo; Xóa S3 buckets Chọn bucket \u0026rsquo;lf-data-lake-AccountID' Chọn Empty Nhấn Exit Chọn \u0026rsquo;lf-data-lake-AccountID\u0026rsquo; lần nữa, chọn Delete "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
