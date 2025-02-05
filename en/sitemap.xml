@@ -2,457 +2,457 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/5-data-analyst-root/athena-access/</loc>
+    <loc>/5-data-analyst-root/athena-access/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/athena-access/"
+                href="/vi/5-data-analyst-root/athena-access/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/athena-access/"
+                href="/5-data-analyst-root/athena-access/"
                 />
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/athena-access/1-createdatafilters/</loc>
+    <loc>/5-data-analyst-root/athena-access/1-createdatafilters/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/athena-access/1-createdatafilters/"
+                href="/vi/5-data-analyst-root/athena-access/1-createdatafilters/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/athena-access/1-createdatafilters/"
+                href="/5-data-analyst-root/athena-access/1-createdatafilters/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/1-datalake-administrator/</loc>
+    <loc>/4-configure-lake-formation-root/1-datalake-administrator/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/1-datalake-administrator/"
+                href="/vi/4-configure-lake-formation-root/1-datalake-administrator/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/1-datalake-administrator/"
+                href="/4-configure-lake-formation-root/1-datalake-administrator/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/</loc>
+    <loc>/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/"
+                href="/vi/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/"
+                href="/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-access/</loc>
+    <loc>/6-data-engineer-root/glue-studio-access/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-access/"
+                href="/vi/6-data-engineer-root/glue-studio-access/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-access/"
+                href="/6-data-engineer-root/glue-studio-access/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-access/1-grantpermissions/</loc>
+    <loc>/6-data-engineer-root/glue-studio-access/1-grantpermissions/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-access/1-grantpermissions/"
+                href="/vi/6-data-engineer-root/glue-studio-access/1-grantpermissions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-access/1-grantpermissions/"
+                href="/6-data-engineer-root/glue-studio-access/1-grantpermissions/"
                 />
   </url><url>
-    <loc>//localhost:1313/7-bi-analyst-root/initial-setup/</loc>
+    <loc>/7-bi-analyst-root/initial-setup/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-bi-analyst-root/initial-setup/"
+                href="/vi/7-bi-analyst-root/initial-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-bi-analyst-root/initial-setup/"
+                href="/7-bi-analyst-root/initial-setup/"
                 />
   </url><url>
-    <loc>//localhost:1313/1-introduction/</loc>
+    <loc>/1-introduction/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduction/"
+                href="/vi/1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduction/"
+                href="/1-introduction/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/redshift-access/1-setupredshift/</loc>
+    <loc>/5-data-analyst-root/redshift-access/1-setupredshift/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/redshift-access/1-setupredshift/"
+                href="/vi/5-data-analyst-root/redshift-access/1-setupredshift/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/redshift-access/1-setupredshift/"
+                href="/5-data-analyst-root/redshift-access/1-setupredshift/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/2-catalog-settings/</loc>
+    <loc>/4-configure-lake-formation-root/2-catalog-settings/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/2-catalog-settings/"
+                href="/vi/4-configure-lake-formation-root/2-catalog-settings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/2-catalog-settings/"
+                href="/4-configure-lake-formation-root/2-catalog-settings/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/</loc>
+    <loc>/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/"
+                href="/vi/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/"
+                href="/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/</loc>
+    <loc>/6-data-engineer-root/glue-studio-notebook-access/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-notebook-access/"
+                href="/vi/6-data-engineer-root/glue-studio-notebook-access/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/"
+                href="/6-data-engineer-root/glue-studio-notebook-access/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/redshift-access/2-grantpermission/</loc>
+    <loc>/5-data-analyst-root/redshift-access/2-grantpermission/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/redshift-access/2-grantpermission/"
+                href="/vi/5-data-analyst-root/redshift-access/2-grantpermission/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/redshift-access/2-grantpermission/"
+                href="/5-data-analyst-root/redshift-access/2-grantpermission/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/athena-access/2-grantpermission/</loc>
+    <loc>/5-data-analyst-root/athena-access/2-grantpermission/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/athena-access/2-grantpermission/"
+                href="/vi/5-data-analyst-root/athena-access/2-grantpermission/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/athena-access/2-grantpermission/"
+                href="/5-data-analyst-root/athena-access/2-grantpermission/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/redshift-access/</loc>
+    <loc>/5-data-analyst-root/redshift-access/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/redshift-access/"
+                href="/vi/5-data-analyst-root/redshift-access/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/redshift-access/"
+                href="/5-data-analyst-root/redshift-access/"
                 />
   </url><url>
-    <loc>//localhost:1313/2-sample-data-users/</loc>
+    <loc>/2-sample-data-users/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-sample-data-users/"
+                href="/vi/2-sample-data-users/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-sample-data-users/"
+                href="/2-sample-data-users/"
                 />
   </url><url>
-    <loc>//localhost:1313/7-bi-analyst-root/qs-lakeformation-setup/</loc>
+    <loc>/7-bi-analyst-root/qs-lakeformation-setup/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-bi-analyst-root/qs-lakeformation-setup/"
+                href="/vi/7-bi-analyst-root/qs-lakeformation-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-bi-analyst-root/qs-lakeformation-setup/"
+                href="/7-bi-analyst-root/qs-lakeformation-setup/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/</loc>
+    <loc>/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/"
+                href="/vi/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/"
+                href="/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/3-databases/</loc>
+    <loc>/4-configure-lake-formation-root/3-databases/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/3-databases/"
+                href="/vi/4-configure-lake-formation-root/3-databases/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/3-databases/"
+                href="/4-configure-lake-formation-root/3-databases/"
                 />
   </url><url>
-    <loc>//localhost:1313/3-preparation/</loc>
+    <loc>/3-preparation/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-preparation/"
+                href="/vi/3-preparation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-preparation/"
+                href="/3-preparation/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/athena-access/3-verifyaccess/</loc>
+    <loc>/5-data-analyst-root/athena-access/3-verifyaccess/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/athena-access/3-verifyaccess/"
+                href="/vi/5-data-analyst-root/athena-access/3-verifyaccess/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/athena-access/3-verifyaccess/"
+                href="/5-data-analyst-root/athena-access/3-verifyaccess/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/glue-studio-access/3-verifyaccess/</loc>
+    <loc>/6-data-engineer-root/glue-studio-access/3-verifyaccess/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/glue-studio-access/3-verifyaccess/"
+                href="/vi/6-data-engineer-root/glue-studio-access/3-verifyaccess/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/glue-studio-access/3-verifyaccess/"
+                href="/6-data-engineer-root/glue-studio-access/3-verifyaccess/"
                 />
   </url><url>
-    <loc>//localhost:1313/7-bi-analyst-root/qs-verify-access-control/</loc>
+    <loc>/7-bi-analyst-root/qs-verify-access-control/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-bi-analyst-root/qs-verify-access-control/"
+                href="/vi/7-bi-analyst-root/qs-verify-access-control/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-bi-analyst-root/qs-verify-access-control/"
+                href="/7-bi-analyst-root/qs-verify-access-control/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/redshift-access/3-verifyaccess/</loc>
+    <loc>/5-data-analyst-root/redshift-access/3-verifyaccess/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/redshift-access/3-verifyaccess/"
+                href="/vi/5-data-analyst-root/redshift-access/3-verifyaccess/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/redshift-access/3-verifyaccess/"
+                href="/5-data-analyst-root/redshift-access/3-verifyaccess/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/</loc>
+    <loc>/4-configure-lake-formation-root/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/"
+                href="/vi/4-configure-lake-formation-root/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/"
+                href="/4-configure-lake-formation-root/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/4-crawlthedata/</loc>
+    <loc>/4-configure-lake-formation-root/4-crawlthedata/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/4-crawlthedata/"
+                href="/vi/4-configure-lake-formation-root/4-crawlthedata/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/4-crawlthedata/"
+                href="/4-configure-lake-formation-root/4-crawlthedata/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-data-analyst-root/</loc>
+    <loc>/5-data-analyst-root/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-analyst-root/"
+                href="/vi/5-data-analyst-root/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-analyst-root/"
+                href="/5-data-analyst-root/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/5-datalake-locations/</loc>
+    <loc>/4-configure-lake-formation-root/5-datalake-locations/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/5-datalake-locations/"
+                href="/vi/4-configure-lake-formation-root/5-datalake-locations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/5-datalake-locations/"
+                href="/4-configure-lake-formation-root/5-datalake-locations/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-data-engineer-root/</loc>
+    <loc>/6-data-engineer-root/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-data-engineer-root/"
+                href="/vi/6-data-engineer-root/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-data-engineer-root/"
+                href="/6-data-engineer-root/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-configure-lake-formation-root/6-lftag-assignment/</loc>
+    <loc>/4-configure-lake-formation-root/6-lftag-assignment/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-configure-lake-formation-root/6-lftag-assignment/"
+                href="/vi/4-configure-lake-formation-root/6-lftag-assignment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-configure-lake-formation-root/6-lftag-assignment/"
+                href="/4-configure-lake-formation-root/6-lftag-assignment/"
                 />
   </url><url>
-    <loc>//localhost:1313/7-bi-analyst-root/</loc>
+    <loc>/7-bi-analyst-root/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-bi-analyst-root/"
+                href="/vi/7-bi-analyst-root/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-bi-analyst-root/"
+                href="/7-bi-analyst-root/"
                 />
   </url><url>
-    <loc>//localhost:1313/8-cleanups/</loc>
+    <loc>/8-cleanups/</loc>
     <lastmod>1970-01-01T07:33:45+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/8-cleanups/"
+                href="/vi/8-cleanups/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/8-cleanups/"
+                href="/8-cleanups/"
                 />
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="/tags/"
                 />
   </url>
 </urlset>

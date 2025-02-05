@@ -1,244 +1,244 @@
 [
 {
-	"uri": "//localhost:1313/5-data-analyst-root/athena-access/",
+	"uri": "/5-data-analyst-root/athena-access/",
 	"title": "Athena Access",
 	"tags": [],
 	"description": "",
 	"content": "Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL. With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds.\nIAM identity fine grained access to datalake using Athena When you grant Lake Formation permissions on a Data Catalog table, you can include data filtering specifications to restrict access to certain data in query results. Lake Formation uses data filtering to achieve column-level security, row-level security and cell-level security.\nRow filter on table dl_tpc_item Cell filter on table dl_tpc_promotion Column filter on table dl_tpc_web_page Content Create row and cell filters using data filters Grant user permissions Verify access through the Athena console "
 },
 {
-	"uri": "//localhost:1313/",
+	"uri": "/",
 	"title": "Building a data lake",
 	"tags": [],
 	"description": "",
 	"content": "Building a data lake Use AWS Lake Formation to build, secure, and manage data lakes on AWS. AWS Lake Formation makes it easier to centrally govern, secure, and globally share data for analytics and machine learning (ML).\nMain content Introduction Sample Data \u0026amp; Users Preparation Configure Lake Formation Data Engineer Data Analyst BI Analyst Clean up resources "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/athena-access/1-createdatafilters/",
+	"uri": "/5-data-analyst-root/athena-access/1-createdatafilters/",
 	"title": "Create row and cell filters using data filters",
 	"tags": [],
 	"description": "",
 	"content": "Log in as the user data-admin\nCreate row filter using data filters In the AWS Lake Formation interface: Select Data filters Select Create new filter In the Create data filter interface Data filter name, enter analyst_item Target database, select tpc Target table, select dl_tpc_item Select Access to all columns Select Filter rows Enter i_category='Electronics' Select Create data filter Create cell filter using data filters Next, we\u0026rsquo;ll create another Data Filter for cell level access on table dl_tpc_promotion and grant its access to lf-data-analyst user.\nIn the AWS Lake Formation interface:\nSelect Data filters Select Create new filter In the Create data filter interface\nData filter name, enter analyst_promotion Target database, select tpc Target table, select dl_tpc_promotion Select Include columns Select columns p_start_date_sk, p_end_date_sk, p_discount_active, p_channel_details, p_purpose, p_promo_id, p_promo_name Select Filter rows Enter p_promo_name='ese' Select Create data filter Create column filter In the AWS Lake Formation interface:\nSelect Data permissions Select Grant In the Grant permissions interface:\nSelect IAM users and roles Select lf-data-analyst Select Named data catalog resources Select tpc Select dl_tpc_web_page Select Column-based access Select Include columns Select wp_url, wp_type, wp_link_count Select Grant "
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/1-datalake-administrator/",
+	"uri": "/4-configure-lake-formation-root/1-datalake-administrator/",
 	"title": "Data Lake Administrator",
 	"tags": [],
 	"description": "",
 	"content": "Data Lake Administrator A data lake administrator is an IAM user or IAM role that has the ability to grant any principal (including self) any permission on any Data Catalog resource.\nTruy cập AWS Management Console Find AWS Lake Formation Select AWS Lake Formation In the AWS Lake Formation interface: Assign a Lake Formation administrator, uncheck Add myself Check Add other AWS users or roles and select lf-data-admin Select Get started In the AWS Lake Formation interface: Select Administrative roles and tasks Select Manage administrators In the Add administrators interface: Select Data lake administrator Select lf-data-admin "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/",
+	"uri": "/6-data-engineer-root/glue-studio-notebook-access/2-creategluenotebook/",
 	"title": "Develop Glue Job in Notebook",
 	"tags": [],
 	"description": "",
 	"content": "Login into AWS console as lf-data-engineer user\nDownload the Notebook file\nIn the AWS Glue interface Select Notebooks Select Notebook In the Notebook interface Select Upload Notebook Select Choose file Select DE-GlueServiceRole Select Create notebook You will now be redirected to your Glue Studio Notebook (which could take a couple of minutes to initialize). Change the job name to lf-gluenotebook-job and select Save "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-access/",
+	"uri": "/6-data-engineer-root/glue-studio-access/",
 	"title": "Glue Studio Access",
 	"tags": [],
 	"description": "",
 	"content": "AWS Glue Studio is a visual interface for AWS Glue that makes it easy for extract-transform-load (ETL) developers to author, run, and monitor AWS Glue ETL jobs. Data Engineers use AWS Glue ETL with Apache Spark to perform transformations on their data sets in Amazon S3 and load the transformed data into data lakes and data warehouses for analysis. With different teams accessing the same data set in Amazon S3, it is imperative to grant and restrict permissions based on their roles.\nContent Grant Permissions through AWS Lake Formation Create Glue Studio Jobs Verify Access "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-access/1-grantpermissions/",
+	"uri": "/6-data-engineer-root/glue-studio-access/1-grantpermissions/",
 	"title": "Grant Permissions through AWS Lake Formation",
 	"tags": [],
 	"description": "",
 	"content": "Trong phần này, bạn sẽ sử dụng Lake Formation để cấp quyền cho người dùng lf-data-engineer và vai trò dịch vụ glue tương ứng DE-GlueServiceRole. DE-GlueServiceRole is the role used by Data Engineer user to access Glue Data Catalog tables in Glue Studio jobs. Login into AWS console as lf-data-admin user\nIn the AWS Lake Formation interface\nSelect Data lake permissions Select Grant In the Grant permissions interface\nSelect IAM users and roles Select lf-data-engineer and DE-GlueServiceRole Select Named data catalog resources Select cơ sở dữ liệu tpc Select bảng dl_tpc_household_demographics Select Select and Describe Select All data access Select Grant Cấp quyền create table cho role DE-GlueServiceRole trong cơ sở dữ liệu tpc\nIn the AWS Lake Formation interface\nSelect Data lake permissions Select Grant In the Grant permissions interface\nSelect IAM users and roles Select DE-GlueServiceRole Select Named data catalog resources Select cơ sở dữ liệu tpc Select Create table Select Grant "
 },
 {
-	"uri": "//localhost:1313/7-bi-analyst-root/initial-setup/",
+	"uri": "/7-bi-analyst-root/initial-setup/",
 	"title": "Initial Setup",
 	"tags": [],
 	"description": "",
 	"content": " In the AWS services console, search for QuickSight. Click on SIGN UP FOR QUICKSIGHT. On the Create your QuickSight account page Enter your email address Select Use IAM federated identities \u0026amp; QuickSight-managed users Set QuickSight account name as quicksight-lf-yourname Select Amazon Athena and Amazon S3. For S3, choose bucket with name lf-data-lake- Select Finish After successfully registering, select GO TO QUICKSIGHT Next we will setup up a QuickSight author to demonstrate the Lake Formation integration. We will configure this author to have access to selective columns in table dl_tpc_customer. The columns that they can access are c_salutation, c_first_sales_date_sk,c_customer_sk, c_login.\nClick on the logged-in user on the top left and choose Manage QuickSight and select Manage users. Add a user by clicking on Invite users. Enter your email address with the author role and select No for IAM. Click on Invite. You will receive an email to accept invitation , setup password and sign-in link. Go to your inbox and accept invitation. Set a new password. This email also has a sign in link Click here to sign in which you will need in subsequent steps. Copy the link and save it.\nYou will need the QuickSight ARN for the author just created, as the user is created in default namespace, you can insert the details (AWS Account ID and Email) below to get the QuickSight ARN for the user\narn:aws:quicksight:us-east-1:\u0026lt;aws-account-id\u0026gt;:user/default/\u0026lt;email-address\u0026gt;\r"
 },
 {
-	"uri": "//localhost:1313/1-introduction/",
+	"uri": "/1-introduction/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
 	"content": "Overview Introduces you to the basics of AWS Lake Formation, laying the foundation for the hands-on portion of the workshop. You can use Lake Formation to manage database, table, and column-level access permissions on data stored in Amazon S3. After your data is registered with Lake Formation, you can use AWS analytical services like AWS Glue, Amazon Athena, Amazon Redshift Spectrum to query the data. The following AWS services integrate with AWS Lake Formation and honor Lake Formation permissions.\nAWS Lake Formation AWS Lake Formation makes it easier to centrally govern, secure, and globally share data for analytics and machine learning (ML). With Lake Formation, you can centralize data security and governance using the AWS Glue Data Catalog, letting you manage metadata and data permissions in one place with familiar database-style features. It also delivers fine-grained data access control, so you can help ensure users have access to the right data, down to the row, column, and cell level. You can then scale permissions across your users. Lake Formation also makes it easier to share data internally across your organization and externally using AWS Data Exchange, letting you create a data mesh or meet other data sharing needs with no data movement. And, because Lake Formation tracks data interactions by role and user, it provides comprehensive data access auditing to help ensure the right data was accessed by the right users at the right time.\nAWS Glue AWS Glue and Lake Formation share the same Data Catalog. For console operations (such as viewing a list of tables) and all API operations, AWS Glue users can access only the databases and tables on which they have Lake Formation permissions. See Using AWS Lake Formation with AWS Glue.\nAmazon Athena Use Lake Formation to allow or deny permissions to read data in Amazon S3. When Amazon Athena users select the AWS Glue catalog in the query editor, they can query only the databases, tables, and columns that they have Lake Formation permissions on. Queries using manifests are not supported. In addition to principals who authenticate with Athena through AWS Identity and Access Management (IAM), Lake Formation supports Athena users who connect through the JDBC or ODBC driver and authenticate through SAML. Supported SAML providers include Okta and Microsoft Active Directory Federation Service (AD FS). See Using AWS Lake Formation with Amazon Athena.\nAmazon Redshift Spectrum When users create an external schema on a database in the AWS Glue Data Catalog, they can query only the tables and columns in that schema on which they have Lake Formation permissions. See Using AWS Lake Formation with Amazon Redshift Spectrum\nData Lake The data lake is your persistent data that is stored in Amazon S3 and managed by Lake Formation using a Data Catalog. A data lake typically stores the following:\nStructured and unstructured data Raw data and transformed data, for an Amazon S3 path to be within a data lake, it must be registered with Lake Formation. Data Catalog The Data Catalog is your persistent metadata store. It is a managed service that lets you store, annotate, and share metadata in the AWS Cloud in the same way you would in an Apache Hive metastore. It provides a uniform repository where disparate systems can store and find metadata to track data in data silos, and then use that metadata to query and transform the data. Lake Formation uses the AWS Glue Data Catalog to store metadata about data lakes, data sources, transforms, and targets. Metadata about data sources and targets is in the form of databases and tables. Tables store schema information, location information, and more. Databases are collections of tables. Lake Formation provides a hierarchy of permissions to control access to databases and tables in the Data Catalog. Each AWS account has one Data Catalog per AWS Region.\n"
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/redshift-access/1-setupredshift/",
+	"uri": "/5-data-analyst-root/redshift-access/1-setupredshift/",
 	"title": "Set up Redshift Spectrum",
 	"tags": [],
 	"description": "",
 	"content": "Create Redshift cluster Download file Redshift Spectrum Cluster\nProvide the following values:\nStack name : LF-Workshop-Redshift-Spectrum ClusterSubnet : Select LF-Workshop-PublicSubnetOne and LF-Workshop-PublicSubnetTwo ClusterVPC : Select LF-Workshop-VPC ClusterVPCDefaultSecurityGroup : Select default security group of LF-Workshop-VPC MasterUserPassword : Password for Redshift Admin user (Must be 8-64 characters long and must contain at least one uppercase letter, one lowercase letter and one number. Can be any printable ASCII character except “/”, ““”, or “@”) Check the CloudFormation console and wait for the status CREATE_COMPLETE.\nCreate Spectrum External Schema In the Amazon Redshift interface, select Provisioned cluster dashboard Select Query editor v2 Cung cấp đường dẫn Amazon S3 Select the cluster on the left navigation Select Database user name and password Database, enter dev User name, enter awsuser Password, use the password that you created for MasterUserPassword Select Create connection After connection, run the below statements replacing FILL_ACCOUNT_ID with your Account ID to create spectrum table and grant permission to lf-data-analyst user. create external schema lf_spectrum_schema from data catalog\rdatabase \u0026#39;tpc\u0026#39; iam_role \u0026#39;SESSION\u0026#39;\rcatalog_id \u0026#39;FILL_ACCOUNT_ID\u0026#39;;\rCREATE USER \u0026#34;IAM:lf-data-analyst\u0026#34; password disable;\rGRANT ALL ON SCHEMA lf_spectrum_schema to \u0026#34;IAM:lf-data-analyst\u0026#34;; "
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/2-catalog-settings/",
+	"uri": "/4-configure-lake-formation-root/2-catalog-settings/",
 	"title": "Change Catalog Settings",
 	"tags": [],
 	"description": "",
 	"content": "Change Catalog Settings In the AWS Lake Formation interface Select Data Catalog Settings Select Version 3 Select Save "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/",
+	"uri": "/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/",
 	"title": "Create Glue Studio Jobs",
 	"tags": [],
 	"description": "",
 	"content": "In this section, we will create an ETL job using SQL Transform through Glue Studio. Login into AWS console as lf-data-engineer user\nIn the AWS Management Console Find AWS Glue Select AWS Glue In the AWS Glue interface Select Visual ETL Select Visual ETL Rename the job to: LF_GlueStudio Click Job Details tab to see all job configurations. Select DE-GlueServiceRole Set Requested number of workers to 5 Click Visual tab, in Sources select AWS Glue Data Catalog Select the Data Source that you just created Name, enter Amazon S3 Select tpc database Select dl_tpc_household_demographics table Keep Amazon S3 and add SQL Query Click SQL Query Select tab Transform and enter below query in SQL query select * from myDataSource\rwhere hd_buy_potential = \u0026#39;0-500\u0026#39; Select tab Output schema Keep SQL Query and add Amazon S3 Click on Data target - S3 bucket Select Parquet Select Snappy Provide path s3://\u0026lt;your_LFDataLakeBucketName\u0026gt;/gluestudio/curated/. Please make sure to replace \u0026lt;your_LFDataLakeBucketName\u0026gt; with your LFDataLakeBucketName S3 bucket from Cloud Formation template Outputs tab. Select Create a table in the Data Catalog and on subsequent runs, update the schema and add new partitions Select tpc database Give the table name for the curated output file. In my case, I named it as dl_tpc_household_demographics_below500 Select Save "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/",
+	"uri": "/6-data-engineer-root/glue-studio-notebook-access/",
 	"title": "Glue Studio Notebook Access",
 	"tags": [],
 	"description": "",
 	"content": "AWS Glue makes it easy to author ETL jobs using Glue interactive notebook in AWS Glue Studio.\nContent Develop Glue Job in Notebook Verify Access "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/redshift-access/2-grantpermission/",
+	"uri": "/5-data-analyst-root/redshift-access/2-grantpermission/",
 	"title": "Grant user and group permissions",
 	"tags": [],
 	"description": "",
 	"content": "Grant user and group permissions through AWS Lake Formation In the AWS Lake Formation interface, select Data permissions, select Grant\nIn the Grant permissions interface\nSelect IAM users and roles, select lf-data-analyst Select Named data catalog resources, select tpc for Databases For Database permissions, select Describe Select Grant Select Grant, in the Grant permissions interface:\nSelect IAM users and roles, select lf-data-analyst Select Resources matched by LF-Tags (recommended), select Classification for Key and Non-Sensitive for Values For Database permissions, select Describe For Table permissions, select Select and Describe Select Grant Select Grant, in the Grant permissions interface: Select IAM users and roles, select lf-data-analyst Select Resources matched by LF-Tags (recommended), select group for Key and analyst for Values For Database permissions, select Describe For Table permissions, select Select and Describe Select Grant "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/athena-access/2-grantpermission/",
+	"uri": "/5-data-analyst-root/athena-access/2-grantpermission/",
 	"title": "Grant user permissions",
 	"tags": [],
 	"description": "",
 	"content": "Grant row filter using data filters In the AWS Lake Formation interface:\nSelect Tables Select dl_tpc_item table Select Actions, select Grant In the Grant permissions interface:\nSelect IAM users and roles\nSelect lf-data-analyst\nSelect Named data catalog resources\nSelect tpc database\nSelect dl_tpc_item table\nData filters - optional, select analyst_item\nSelect Select Select Grant Grant cell filter using data filters In the AWS Lake Formation interface:\nSelect Tables Select dl_tpc_promotion table Select Actions, select Grant In the Grant permissions interface:\nSelect IAM users and roles\nSelect lf-data-analyst\nSelect Named data catalog resources\nSelect tpc database\nSelect dl_tpc_promotion table\nData filters - optional, select analyst_promotion\nSelect Select Select Grant "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/redshift-access/",
+	"uri": "/5-data-analyst-root/redshift-access/",
 	"title": "Redshift Access",
 	"tags": [],
 	"description": "",
 	"content": "Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. Amazon Redshift Serverless lets you access and analyze data without the usual configurations of a provisioned data warehouse. Resources are automatically provisioned and data warehouse capacity is intelligently scaled to deliver fast performance for even the most demanding and unpredictable workloads. You don\u0026rsquo;t incur charges when the data warehouse is idle, so you only pay for what you use. Regardless of the size of the dataset, you can load data and start querying right away in the Amazon Redshift query editor v2 or in your favorite business intelligence (BI) tool.\nFederated IAM identity access to datalake using Redshift Spectrum Amazon Redshift Spectrum lets you to query and retrieve data in Amazon S3 data lakes without loading data into Amazon Redshift cluster nodes. Redshift Spectrum supports querying Lake Formation tables using federated IAM identities. The IAM identities can be an IAM user or an IAM role. Redshift Spectrum supports reads or SELECT queries on the Lake Formation managed external schema tables.\nContent Set up Redshift Spectrum Grant user permissions Verify access through the Redshift "
 },
 {
-	"uri": "//localhost:1313/2-sample-data-users/",
+	"uri": "/2-sample-data-users/",
 	"title": "Sample Data &amp; Users",
 	"tags": [],
 	"description": "",
 	"content": "TPC Database \u0026amp; Tables TPC data , is a public dataset used in this workshop. This is a synthetic dataset about products, customer information, demographics. Household details, inventory, web sales, promotions and returns.\nFollowing are the details to focus on for this workshop:\nweb_sales web_page promotion item customer customer_address household_demographics income_band Entire TPC data dictionary is available here\nTest Users \u0026amp; Groups To demonstrate different Lake Formation capabilities, use the following user personas mapped to IAM principles.\nData Admin, mapped to lf-data-admin – Has access to all Lake Formation features and can make all changes to the service. Data Engineer, mapped to lf-data-engineer – Is interested in developing Data Engineering jobs but limited to tables web_page and web_sales for access controls. Data Analyst, mapped to lf-data-analyst – Is interested in querying the data for BI dashboarding and reporting, but cannot access PII data. "
 },
 {
-	"uri": "//localhost:1313/7-bi-analyst-root/qs-lakeformation-setup/",
+	"uri": "/7-bi-analyst-root/qs-lakeformation-setup/",
 	"title": "Setup Quicksight user access in Lake Formation",
 	"tags": [],
 	"description": "",
 	"content": " In the AWS services console, search for Lake Formation. Go to database and click Grant. Select SAML user and groups and enter QuickSight ARN of the author Select tpc as the Database and dl_tpc_customer as the Table. Select Select, select Column-based access Select c_salutation, c_first_sales_date_sk, c_customer_sk, c_login Select Grant "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/",
+	"uri": "/6-data-engineer-root/glue-studio-notebook-access/3-verifyaccess/",
 	"title": "Verify Access",
 	"tags": [],
 	"description": "",
 	"content": "Verify access to tables granted permissions in Lake Formation Execute the next cell to set up and start your Glue interactive session which is needed to start using the notebook. Wait until you see the Session [SOME_SESSION_ID] has been created message. Execute the next cell to create a DynamicFrame from table dl_tpc_household_demographics that was given access through DE-GlueServiceRole and display its schema. Execute the next cell to convert the DynamicFrame to a Spark DataFrame and display a sample of the data for table rows with column hd_buy_potential value greater than 10000. Execute the next cell to write the output data an Amazon S3 path s3://\u0026lt;your_bucket\u0026gt;/gluenotebook/curated/ and a table for it in the AWS Glue Data Catalog. Please make sure to replace the ${BUCKET_NAME} with your LFWorkshopBucketName S3 bucket from Cloud Formation template Outputs tab.\nOnce the previous cell has finished execution, you can verify access by going to S3 path s3://\u0026lt;your_bucket\u0026gt;/gluenotebook/curated/ to see the output files generated in Parquet format. Verify deny access to tables not granted permissions in Lake Formation Now to verify the access denied on tables not granted permissions in Lake Formation, execute the last cell in the notebook that is accessing one of the other tables in database tpc that was not granted permissions for role DE-GlueServiceRole - dl_tpc_customer_address.\nThe error message shows the insufficient Lake Formation permissions for the given table.\n"
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/3-databases/",
+	"uri": "/4-configure-lake-formation-root/3-databases/",
 	"title": "Databases",
 	"tags": [],
 	"description": "",
 	"content": "\rMake sure you logout from AWS console and login as lf-data-admin to continue.\nLogout from the current AWS console and use the sign in link from the CloudFormation output to login as lf-data-admin user and use the password you obtained from AWS Secrets Manager. Now, navigate to AWS Lake Formation console and click on the Databases option on the left and then click on Create database button.\nSince we are planning to build the data lake for TPC data, name the database as tpc. On the Location box, select the S3 data lake path which was created through CloudFormation. You can also find the S3 path from the CloudFormation output tab. The S3 path will be named lf-data-lake-account-ID where the account ID will be the 12 digit account number you are working in. Uncheck the option - Use only IAM access control for new tables in this database. Leave rest of the options as default and click on Create database button.\nIf the database creation is successful, it will look like this:\n"
 },
 {
-	"uri": "//localhost:1313/3-preparation/",
+	"uri": "/3-preparation/",
 	"title": "Preparation",
 	"tags": [],
 	"description": "",
 	"content": "Create EC2 Key Pair The CloudFormation template will require you to provide an Amazon EC2 key pair.\nOpen the Amazon EC2 console at https://console.aws.amazon.com/ec2/ In the navigation pane, under NETWORK \u0026amp; SECURITY, choose Key Pairs. Choose Create Key Pair. For Key pair name, enter a name for the new key pair. Choose the .pem option and then choose Create. The private key file is automatically downloaded by your browser. The base file name is the name you specified as the name of your key pair, and the file name extension is .pem. Save the private key file, this file will be required in the next chapter. CloudFormation Template Before starting this AWS Lake Formation workshop, you need to create the required AWS resources. To do this, we provide AWS CloudFormation template to create a stack that contains the resources. When you create the stack, AWS creates a number of resources in your account. The outcome of these steps is to create the sample TPC database running on Amazon RDS, sample users to test different security patterns, Glue connections and other IAM resources.\nDownload template file\nIn the CloudFormation interface, select Create stack\nSelect Choose file, select the downloaded template file and select Next Stack name, enter Lake-Formation-Workshop\nSelect the generated key pair\nAccept the default values ​​and select next\nSelect Submit\nObtaining the secret password The password that is used for the all user(s) in this workshop, is generated through AWS Secrets Manager. It\u0026rsquo;s unique every time this stack gets created. Follow these steps to obtain the secret password for all the users.\nClick on the LFUsersCredentials hyperlink from the CloudFormation output tab. Retrieve the password by clicking on the Retrieve secret value and store it for future use. "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/athena-access/3-verifyaccess/",
+	"uri": "/5-data-analyst-root/athena-access/3-verifyaccess/",
 	"title": "Verify access",
 	"tags": [],
 	"description": "",
 	"content": "Verify access through the Athena console In the AWS Management console interface\nFind Athena Select Athena In the Athena interface\nSelect Query your data with Trino SQL Select Launch query editor If you are first time user, you will notice a message to set up a query result location in S3. Select Edit settings In the Manage settings interface, enter S3 bucket named as s3://lf-workshop-AccountID/athena-results/, replace with your AWS AccountID and select Save Click on Editor tab to go back to Athena Query Editor. Verify Row filter Execute the query below to view the dl_tpc_item table data, only rows with i_category field value of Electronics is visible to lf-data-analyst user. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_item\u0026#34; limit 10; Execute the query below to further confirm the row level access control on table dl_tpc_item. Due to the analyst_item data filter criteria, lf-data-analyst does not have access to rows where the i_category field is not Electronics. Therefore, no rows will be returned. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_item\u0026#34; WHERE i_category != \u0026#39;Electronics\u0026#39;; Verify cell filter Next to test permissions on dl_tpc_promotion table, expand this table on the left hand side of the screen. Notice how the table only shows selective columns that were defined in the data filter analyst_promotion. Execute the query below to view the dl_tpc_promotion table data. Only cells defined in the data filter (selective columns and rows with p_promo_name field value of ese) is visible to lf-data-analyst user. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_promotion\u0026#34; limit 10; Execute the query below to further confirm the cell level access control on table dl_tpc_promotion. Due to the analyst_promotion data filter criteria, lf-data-analyst does not have access to rows where p_promo_name is not ese. Therefore, no rows will be returned. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_promotion\u0026#34; WHERE p_promo_name != \u0026#39;ese\u0026#39;; Verify column filter Execute the query below to further confirm the column level access control on table dl_tpc_web_page, the table shows only selected columns. SELECT * FROM \u0026#34;tpc\u0026#34;.\u0026#34;dl_tpc_web_page\u0026#34; limit 10; "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/glue-studio-access/3-verifyaccess/",
+	"uri": "/6-data-engineer-root/glue-studio-access/3-verifyaccess/",
 	"title": "Verify Access",
 	"tags": [],
 	"description": "",
 	"content": "Login into as lf-data-engineer\nVerify access to tables granted permissions in Lake Formation After the creation of LF_GlueStudio job is completed in the previous section, click on the Run button on the top right to start the execution of LF_GlueStudio Job.\nOnce the Job run has Succeeded, you can verify access by going into your S3 bucket curated folder to see the output files generated in Parquet format. Also, you can browse to Glue Catalog and select your specific database to view the newly created table under it.\n"
 },
 {
-	"uri": "//localhost:1313/7-bi-analyst-root/qs-verify-access-control/",
+	"uri": "/7-bi-analyst-root/qs-verify-access-control/",
 	"title": "Verify access control in QuickSight",
 	"tags": [],
 	"description": "",
 	"content": " Go to your inbox and click on Click here to sign in in the invitation email or use the link if you have saved earlier. Enter the user name (your email address) and enter password. Select Datasets and click on New dataset. Select Athena from data sources option and enter a data source name eg lf-athena-source. Click on Create data source. Select table dl_tpc_customer and select Edit/Preview data You will see only 4 columns c_salutation,c_first_sales_date_sk,c_customer_sk,c_login in the table. This is based on the column level access control we have set previously in Lake Formation console for this QuickSight author. Optional - Click on PUBLISH \u0026amp; VISUALIZE at the top left to create a sample QS report based on this report. "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/redshift-access/3-verifyaccess/",
+	"uri": "/5-data-analyst-root/redshift-access/3-verifyaccess/",
 	"title": "Verify access through the Redshift",
 	"tags": [],
 	"description": "",
 	"content": "Login into AWS console as the lf-data-analyst\nIn the Amazon Redshift interface, select Provisioned cluster dashboard Select Query editor v2 Select the cluster and select Temporary credentials with your IAM identity Select Create connection Run the below statements to verify access to the tables. SELECT * FROM lf_spectrum_schema.dl_tpc_customer; SELECT * FROM lf_spectrum_schema.dl_tpc_household_demographics; "
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/",
+	"uri": "/4-configure-lake-formation-root/",
 	"title": "Configure Lake Formation",
 	"tags": [],
 	"description": "",
 	"content": "In this section, the persona Data Lake Administrator will set up Lake Formation so it can be used by other consumer data personas like Data Engineer, Data Scientist and Data Analysts. Data Administrator will create a new database for TPC data, create metadata tables for that data in the Glue data catalog and set up access permissions for the users using Lake Formation tags.\nFollow the following steps one-by-one to complete these labs:\nData Lake Administrator Change Catalog Settings Databases Provide data for the data lake Data Lake Locations Lake Formation Tags (LF-Tags) "
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/4-crawlthedata/",
+	"uri": "/4-configure-lake-formation-root/4-crawlthedata/",
 	"title": "Provide data for the data lake",
 	"tags": [],
 	"description": "",
 	"content": "In this exercise, we will run an existing AWS Glue Crawler (Created as a part of CloudFormaton stack) and populate the catalog in the tpc database you created in the previous steps.\nBefore running the AWS Glue Crawler we first need to grant the permission to AWS Glue Crawler role to create tables in the tpc database. We selected the IAM role LF-GlueServiceRole when creating the AWS Glue Crawler. This role will create tables under the database tpc created in the previous step. By default, this role does not have permissions to create resources under the tpc database. Follow these steps to provide the required access to the IAM role LF-GlueServiceRole.\nIn the AWS Lake Formation navigation pane, under Databases, select tpc. Select Grant from the Actions drop-down list. In the Grant permissions interface: Select IAM users and roles Select LF-GlueServiceRole Select Named Data Catalog resources Select Databases as tpc Select Create table Select Grant In the AWS Lake Formation navigation pane, select Crawlers to go to AWS Glue console: Select the crawler named TPC Crawler Click on Run button to run the crawler You will see that the crawler is sucessfully starting. It will take a minute or so to populate the tpc database with tables. When it is done crawling you will notice number of tables added under Table changes from last run column. In this case 8 tables have been added. "
 },
 {
-	"uri": "//localhost:1313/5-data-analyst-root/",
+	"uri": "/5-data-analyst-root/",
 	"title": "Data Analyst",
 	"tags": [],
 	"description": "",
 	"content": "Nội dung Athena Access Redshift Access "
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/5-datalake-locations/",
+	"uri": "/4-configure-lake-formation-root/5-datalake-locations/",
 	"title": "Data Lake Locations",
 	"tags": [],
 	"description": "",
 	"content": "You register the S3 location with AWS Lake Formation. You can then use Lake Formation permissions for fine-grained access control to AWS Glue Data Catalog objects that point to this location, and to the underlying data in the location.\nIn the navigation pane, select Data lake locations, and then select Register location In the Register location interface: Enter a path to an existing S3 bucket to contain the data that you want available in your data lake. For the IAM role, select LF-GlueServiceRole Trong Permission mode, select Lake Formation Select Register location "
 },
 {
-	"uri": "//localhost:1313/6-data-engineer-root/",
+	"uri": "/6-data-engineer-root/",
 	"title": "Data Engineer",
 	"tags": [],
 	"description": "",
 	"content": "Data Engineer persona builds data pipelines to move data from one location to another, applies data transformation routines to modify the data so it is accurate and consumable by the data analysts and data scientists to produce business insights.\nContent Glue Studio Glue Studio Notebook "
 },
 {
-	"uri": "//localhost:1313/4-configure-lake-formation-root/6-lftag-assignment/",
+	"uri": "/4-configure-lake-formation-root/6-lftag-assignment/",
 	"title": "Lake Formation Tags",
 	"tags": [],
 	"description": "",
 	"content": "Create LF-Tags From the navigation pane, select LF-Tags and permissions. Select Add LF-Tag Enter Clasification for Key Add Sensitive and Non-Sensitive for Values Select Add LF-Tag Enter group for Key Add developer, campaign, analyst for Values Assigning permissions to alter table to add LF-Tags In the AWS Lake Formation interface, Select Tables Select dl_tpc_customer, click on Actions and Select Grant In the Grant permissions interface: Select lf-data-admin Trong phần LF-Tags or catalog resources, Select Named data catalog resources Select database tpc and table dl_tpc_customer Select Alter Select Grant Assign LF-Tags to Data Catalog Objects In the AWS Lake Formation interface, Select Tables Select dl_tpc_customer table and go to the table details page Select Actions, Select Edit LF-Tags Select Assign new LF-Tag Provide Classification for Key and Non-Sensitive for Values Select Save Select Actions, Select Edit schema Select c_first_name, c_last_name, c_email_address and Select Edit LF-tags For the Inherited keys, change the Values to Sensitive Select Save Select Save as new version\nIn the AWS Lake Formation interface, Select Tables\nSelect dl_tpc_household_demographics table, Select Actions, Select Edit LF-Tags\nSelect group for Assigned keys and Select analyst for Values\n"
 },
 {
-	"uri": "//localhost:1313/7-bi-analyst-root/",
+	"uri": "/7-bi-analyst-root/",
 	"title": "BI Analyst",
 	"tags": [],
 	"description": "",
 	"content": "BI Analyst persona is responsible for building data reports and dashboards for line of business (LoB) owners so they can make business decisions.\nQuicksight Integration Initial Setup Setup Quicksight user access in Lake Formation Verify access control in QuickSight "
 },
 {
-	"uri": "//localhost:1313/8-cleanups/",
+	"uri": "/8-cleanups/",
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
 	"content": "Unsubscribe from QuickSight Click on the QuickSight User name in the top right corner menu. Click Manage QuickSight. Click Account settings. Click Manage Enter confirm to verify. Click Delete account. Delete Stacks Go to CloudFormation Select the \u0026lsquo;Lake-Formation-Workshop\u0026rsquo; Stack Delete Do the same with \u0026lsquo;LF-Workshop-Redshift-Spectrum\u0026rsquo; Delete S3 buckets Select bucket \u0026rsquo;lf-data-lake-AccountID\u0026rsquo; Select Empty Click Exit Select \u0026rsquo;lf-data-lake-AccountID\u0026rsquo; again, select Delete "
 },
 {
-	"uri": "//localhost:1313/categories/",
+	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/tags/",
+	"uri": "/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

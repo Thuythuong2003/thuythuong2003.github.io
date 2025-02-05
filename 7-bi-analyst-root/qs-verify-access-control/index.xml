@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Verify access control in QuickSight on  Building a data lake</title>
-    <link>//localhost:1313/7-bi-analyst-root/qs-verify-access-control/</link>
+    <link>/7-bi-analyst-root/qs-verify-access-control/</link>
     <description>Recent content in Verify access control in QuickSight on  Building a data lake</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313/7-bi-analyst-root/qs-verify-access-control/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/7-bi-analyst-root/qs-verify-access-control/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

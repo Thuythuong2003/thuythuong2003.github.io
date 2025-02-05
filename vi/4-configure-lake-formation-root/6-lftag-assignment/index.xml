@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thẻ Lake Formation on Xây dựng hồ dữ liệu</title>
-    <link>//localhost:1313/vi/4-configure-lake-formation-root/6-lftag-assignment/</link>
+    <link>/vi/4-configure-lake-formation-root/6-lftag-assignment/</link>
     <description>Recent content in Thẻ Lake Formation on Xây dựng hồ dữ liệu</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313/vi/4-configure-lake-formation-root/6-lftag-assignment/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/vi/4-configure-lake-formation-root/6-lftag-assignment/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

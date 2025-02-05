@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Create Glue Studio Jobs on  Building a data lake</title>
-    <link>//localhost:1313/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/</link>
+    <link>/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/</link>
     <description>Recent content in Create Glue Studio Jobs on  Building a data lake</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/6-data-engineer-root/glue-studio-access/2-creategluestudiojobs/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sample Data &amp; Users on  Building a data lake</title>
-    <link>//localhost:1313/2-sample-data-users/</link>
+    <link>/2-sample-data-users/</link>
     <description>Recent content in Sample Data &amp; Users on  Building a data lake</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313/2-sample-data-users/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/2-sample-data-users/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
